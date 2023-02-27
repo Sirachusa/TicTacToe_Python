@@ -1,3 +1,5 @@
+# Displaying the board:
+
 def display_board(board):
     
     print('\n'*100)
@@ -10,6 +12,7 @@ def display_board(board):
     print('| ' + board[7] + ' | ' + board[8] + ' | ' + board[9] + ' |')
     print('-------------')
 
+# Choose a mark for Player1 and Player2
 
 def player_input():
     
@@ -26,10 +29,15 @@ def player_input():
         else:
             
             return ('O','X')
+        
+        
+# Place a marker to desired position:
 
 def place_marker(board, marker, position):
     
     board[position] = marker
+    
+# Check if one of the marker win | ROWS, COLUMNS, DIAGONALS
 
 def win_check(board, mark):
     
@@ -61,6 +69,9 @@ def win_check(board, mark):
     else:
         return False 
 
+    
+# Randomize whos begin the game:
+
 import random
 
 def choose_first():
@@ -72,9 +83,15 @@ def choose_first():
     else:
         return 'Player2'
 
+    
+# Check the position is avalaible:
+
 def space_check(board, position):
     
     return board[position] == ' ' 
+
+
+# Check the board is filled or not:
 
 def full_board_check(board):
     
@@ -83,6 +100,9 @@ def full_board_check(board):
             return False      
     
     return True    
+
+
+# input for the position, if the position is not free, the while loop ask again and print the space is occupied.
 
 def player_choice(board):
     
@@ -100,11 +120,16 @@ def player_choice(board):
         elif space_check(board,position):
             return position
 
+# Just a question for replay:        
+        
 def replay():
     
     play_again = input('Do you wanna play another match? (Y or N) ').upper()
     
     return play_again == 'Y'
+
+
+# Setup the whole game: [ the hardest part for me :) ]
 
 def play_the_game():
 
