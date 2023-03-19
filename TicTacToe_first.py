@@ -26,7 +26,7 @@ def player_input():
             
             return ('X','O')
         
-        else:
+        elif mark == 'O':
             
             return ('O','X')
         
